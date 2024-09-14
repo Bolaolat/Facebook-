@@ -1,61 +1,93 @@
 <html>
 <head>
-    <title>Login Page</title>
-    <script src="https://unpkg.com/react/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+    <title>Bluesub</title>
+    <script src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js" type="module"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Orbitron:wght@400;500;700&family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(to bottom, #f0f2f5, #ffffff);
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Raleway', sans-serif;
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            color: #000;
+        }
+        .futuristic-button {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            border: none;
+            transition: transform 0.2s;
+        }
+        .futuristic-button:hover {
+            transform: scale(1.05);
+        }
+        .futuristic-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
     </style>
 </head>
 <body>
-    <div id="root"></div>
-    <script type="text/babel">
-        function App() {
-            const handleLogin = () => {
-                alert("Log in button clicked");
-            };
-
-            const handleForgotPassword = () => {
-                alert("Forgotten Password link clicked coded by blue demon");
-            };
-
-            const handleCreateAccount = () => {
-                alert("Create new account button clicked coded by blue demon");
-            };
-
-            return (
-                <div className="flex flex-col items-center justify-center min-h-screen bg-white">
-                    <div className="text-gray-600 mb-4">English (UK)</div>
-                    <div className="mb-8">
-                        <i className="fab fa-facebook text-7xl text-blue-600"></i>
-                    </div>
-                    <div className="w-80">
-                        <input type="text" placeholder="Mobile number or email address" className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg" />
-                        <input type="password" placeholder="Password" className="w-full p-3 mb-4 border border-gray-300 rounded-lg text-lg" />
-                        <button onClick={handleLogin} className="w-full p-3 mb-4 bg-blue-600 text-white rounded-lg text-lg font-bold">Log in</button>
-                        <div onClick={handleForgotPassword} className="text-center text-blue-600 mb-4 text-lg cursor-pointer">Forgotten Password?</div>
-                        <button onClick={handleCreateAccount} className="w-full p-3 mb-4 border border-blue-600 text-blue-600 rounded-lg text-lg font-bold">Create new account</button>
-                    </div>
-                    <div className="flex items-center justify-center mt-8">
-                        <span className="text-gray-600 text-lg">BLUE TECH</span>
-                    </div>
-                    <div className="flex space-x-4 mt-4 text-gray-600 text-sm">
-                        <a href="#" className="hover:underline">About</a>
-                        <a href="#" className="hover:underline">Help</a>
-                        <a href="#" className="hover:underline">More</a>
-                    </div>
+    <ion-header class="ion-no-border">
+        <ion-toolbar class="bg-transparent">
+            <ion-title class="flex justify-center">
+                <img src="https://placehold.co/100x50" alt="Getsub Logo" class="h-8" />
+            </ion-title>
+            <ion-buttons slot="end">
+                <ion-menu-button>
+                    <ion-icon name="menu" slot="icon-only"></ion-icon>
+                </ion-menu-button>
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+        <div class="text-center mt-6">
+            <h1 class="text-2xl font-bold">Welcome Bolaji</h1>
+            <ion-button class="mt-4 futuristic-button text-white rounded-full px-6 py-2" onclick="alert('Fund Wallet clicked!')">
+                <ion-icon name="wallet-outline" slot="start"></ion-icon>
+                Fund Wallet
+            </ion-button>
+        </div>
+        <div class="bg-gray-200 text-center p-4 mt-6 rounded-md mx-4 futuristic-card">
+            <p class="text-black">
+                IF YOUR TRANSACTION DID NOT DELIVER, CLICK <span class="font-bold">HERE</span> TO LEARN HOW TO GET IT RESOLVED 😉
+            </p>
+        </div>
+        <div class="grid grid-cols-2 gap-4 mt-6 mx-4">
+            <ion-button class="bg-white text-black border border-gray-300 rounded-md flex flex-col items-center py-4 futuristic-card" onclick="alert('Buy Data clicked!')">
+                <ion-icon class="text-2xl mb-2" name="wifi-outline"></ion-icon>
+                Buy Data
+            </ion-button>
+            <ion-button class="bg-white text-black border border-gray-300 rounded-md flex flex-col items-center py-4 futuristic-card" onclick="alert('Buy Airtime clicked!')">
+                <ion-icon class="text-2xl mb-2" name="call-outline"></ion-icon>
+                Buy Airtime
+            </ion-button>
+            <ion-button class="bg-white text-black border border-gray-300 rounded-md flex flex-col items-center py-4 futuristic-card" onclick="alert('Buy Cable clicked!')">
+                <ion-icon class="text-2xl mb-2" name="tv-outline"></ion-icon>
+                Buy Cable
+            </ion-button>
+            <ion-button class="bg-white text-black border border-gray-300 rounded-md flex flex-col items-center py-4 futuristic-card" onclick="alert('More clicked!')">
+                <ion-icon class="text-2xl mb-2" name="ellipsis-horizontal-outline"></ion-icon>
+                More
+            </ion-button>
+        </div>
+        <div class="mt-6 mx-4">
+            <div class="bg-white rounded-md shadow-md p-4 flex items-center futuristic-card">
+                <img src="https://placehold.co/100x100" alt="Referral Image" class="w-24 h-24 rounded-md mr-4" />
+                <div>
+                    <p class="text-black font-bold">Refer a Friend, Get ₦250 EACH!!!</p>
+                    <p class="text-black">Share Getsub with friends! Earn rewards together when they join, deposit & use.</p>
+                    <ion-button class="mt-2 futuristic-button text-white rounded-full px-4 py-2" onclick="alert('Get your referral link clicked!')">
+                        Get your referral link
+                    </ion-button>
                 </div>
-            );
-        }
-
-        ReactDOM.render(<App />, document.getElementById('root'));
+            </div>
+        </div>
+    </ion-content>
+    <script type="module">
+        import ionicons from 'https://cdn.jsdelivr.net/npm/ionicons/+esm'
     </script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/esm/ionicons.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/ionicons/dist/collection/components/icon/icon.min.css" rel="stylesheet">
 </body>
 </html>
